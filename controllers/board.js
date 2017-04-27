@@ -1,7 +1,7 @@
 var Deque = require("double-ended-queue");
 const uuidV4 = require('uuid/v4');
 module.exports = {
-  
+
    /* Create the dominos cards */
     createDominos: function(cb) {
         var returned = [];
@@ -105,7 +105,6 @@ module.exports = {
             } else {
                 if (back[0].back == tile.front || back[0].back == tile.back) {
                     var updated_board = deque.toArray()[0][0];
-                    console.log("heree2 " + deque.toArray()[0][0]);
                     var player_tiles = player.tiles;
                     player_tiles.forEach((tile_p) => {
                         if (tile_p.uuid == tile.uuid) {
@@ -148,7 +147,6 @@ module.exports = {
                 if (front[0].front == tile.front || front[0].front == tile.back) {
                     deque.shift(tile);
                     var updated_board = deque.toArray()[0][0];
-                    console.log("heree1 " + deque.toArray()[0]);
                     game.game.board.push(updated_board);
                     flag = true;
                     cb(true);
@@ -156,7 +154,6 @@ module.exports = {
                 } else {
                     if (back[0].back == tile.front || back[0].back == tile.back) {
                         var updated_board = deque.toArray()[0][0];
-                        console.log("heree2 " + deque.toArray()[0][0]);
                         game.game.board.push(updated_board);
                         flag = true;
                         cb(true);

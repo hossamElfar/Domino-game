@@ -44,9 +44,7 @@ router.post('/play/:id', (req, res) => {
             }, function(err, game) {
                 Board.play(tile, game, (game_updated,winner,state) => {
                     if (state == true) {
-                      console.log(game_updated);
                       collection.updateOne({"_id": new ObjectId(id)},game_updated);
-                      //console.log(game.game.board[4]);
                       if(winner){
                         res.json({'state':"winner !!!"});
                       }else{
