@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
+    <title>Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Game</h1>
+      <div class="col-md-3">
+        <% for(var i =0 ;i<game.game.players[0].tiles;i++){ %>
+          <div >
+            <button type="button" name="button"> <%=game.game.players[0].tiles[i].front+" : "+ game.game.players[0].tiles[i].back %> </button>
+          </div>
+        <% }   %>
+      </div>
+    </div>
+  </body>
+</html>
